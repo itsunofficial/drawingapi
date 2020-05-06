@@ -59,6 +59,13 @@ def predict():
 
         return render_template('results.html', prediction =final_pred)
 
-
+# if we deploy on cloud like aws (not for heroku)
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host = '0.0.0.0' , port = 8080)
+	
+    
+	
+
+# if we deploy it on our local server then use this
+#if __name__ == '__main__':
+#	app.run(debug=True)
