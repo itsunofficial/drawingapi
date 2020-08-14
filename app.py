@@ -1,4 +1,5 @@
 import flask
+import os
 from flask import Flask,render_template,url_for,request
 import pickle
 import base64
@@ -61,4 +62,4 @@ def predict():
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
